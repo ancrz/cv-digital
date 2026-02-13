@@ -132,7 +132,7 @@ on:
 ### El Flujo de Branches
 
 ```mermaid
-gitgraph
+gitGraph
     commit id: "init"
     branch dev
     checkout dev
