@@ -1,0 +1,195 @@
+{
+  "meta": {
+    "lang": "es",
+    "version": "4.1.0",
+    "last_updated": "2026-02-12",
+    "labels_ats": {
+      "summary": "Resumen Profesional",
+      "experiencia": "Experiencia Profesional",
+      "educacion": "Formación Académica",
+      "certificados": "Certificaciones",
+      "skills": "Competencias Técnicas",
+      "tools": "Herramientas y Plataformas",
+      "alignment": "Perfil Técnico"
+    }
+  },
+  "personal": {
+    "nombre": "Anthony Cruz",
+    "titulo": "DevOps Engineer",
+    "ubicacion": "Caracas, Venezuela",
+    "email": "Anthony_Cruz@outlook.com",
+    "telefono": "+58 414 377 1069",
+    "foto_url": "https://avatars.githubusercontent.com/u/110553929?v=4",
+    "foto_dockerhub": "https://www.gravatar.com/avatar/ba55a73534a50bd3886d40534304bc79?s=200&r=g&d=mm",
+    "disponible": true,
+    "links": {
+      "github": "https://github.com/ancrz",
+      "linkedin": "https://www.linkedin.com/in/ancrz/",
+      "dockerhub": "https://hub.docker.com/repositories/ancrz",
+      "linktree": "https://linktr.ee/anthony.crzr"
+    }
+  },
+  "perfil": "DevOps Engineer con 8+ años en infraestructura TI y 4+ años especializado en DevOps/SRE. Diseño e implemento pipelines CI/CD, Infrastructure as Code y plataformas contenerizadas en entornos híbridos. Certificado por Google Cloud. Aplico Schema-Driven Development como metodología para despliegues rápidos, reproducibles y auditables.",
+  "perfil_ats": "DevOps Engineer con 8+ años de experiencia en infraestructura TI y 4+ años especializado en DevOps Engineering / SRE. Experiencia comprobada en pipelines CI/CD (Jenkins, GitLab CI, GitHub Actions), Infrastructure as Code (Terraform, Ansible), contenerización (Docker, Kubernetes, Helm) y GitOps (ArgoCD). Certificado por Google Cloud en GKE, Terraform, Apigee X y DevOps. Dominio de Python, Go y Bash para tooling de plataforma. Observabilidad con ELK Stack y Grafana. Automatización RPA (Playwright) y pipelines ETL. Infraestructura híbrida Linux. Disponible para roles DevOps Engineer, SRE, Platform Engineer o Cloud Engineer. Abierto a trabajo remoto internacional.",
+  "candidate_alignment": {
+    "dominio_principal": "DevOps Engineering / SRE",
+    "stack_core": "Docker, Kubernetes, Terraform, Ansible, Helm, ArgoCD",
+    "cicd": "Jenkins, GitLab CI, GitHub Actions",
+    "observabilidad": "ELK Stack, Grafana, Alerting",
+    "lenguajes": "Python, Go, Bash",
+    "cloud": "Google Cloud Platform (GCP)",
+    "metodologia": "Schema-Driven Development, GitOps",
+    "nivel": "Mid-Senior (8+ años TI, 4+ años DevOps)",
+    "certificaciones_resumen": "Google Cloud (GKE, Terraform, Apigee, DevOps), Coursera (Linux), EF SET (B2)",
+    "ingles": "Upper Intermediate (B2)",
+    "disponibilidad": "Inmediata — Remoto internacional"
+  },
+  "core_skills": [
+    { "nombre": "Docker", "nivel": 95, "icono": "fa-brands fa-docker", "color": "text-blue-500" },
+    { "nombre": "Kubernetes", "nivel": 80, "icono": "fa-solid fa-dharmachakra", "color": "text-blue-600" },
+    { "nombre": "Terraform", "nivel": 80, "icono": "fa-solid fa-layer-group", "color": "text-purple-500" },
+    { "nombre": "Python", "nivel": 88, "icono": "fa-brands fa-python", "color": "text-yellow-500" },
+    { "nombre": "Jenkins", "nivel": 88, "icono": "fa-solid fa-rotate", "color": "text-orange-500" },
+    { "nombre": "Ansible", "nivel": 78, "icono": "fa-solid fa-server", "color": "text-red-400" },
+    { "nombre": "Go", "nivel": 68, "icono": "fa-brands fa-golang", "color": "text-cyan-400" },
+    { "nombre": "GitLab CI", "nivel": 82, "icono": "fa-brands fa-gitlab", "color": "text-orange-600" },
+    { "nombre": "Linux", "nivel": 92, "icono": "fa-brands fa-linux", "color": "text-gray-300" },
+    { "nombre": "Helm", "nivel": 75, "icono": "fa-solid fa-anchor", "color": "text-blue-400" }
+  ],
+  "tools_platforms": [
+    { "nombre": "GCP", "icono": "fa-brands fa-google", "related_core": ["Docker", "Kubernetes", "Terraform", "Go"] },
+    { "nombre": "GitHub Actions", "icono": "fa-brands fa-github", "related_core": ["Docker", "Kubernetes", "Terraform"] },
+    { "nombre": "ArgoCD", "icono": "fa-solid fa-arrows-rotate", "related_core": ["Kubernetes", "Helm", "GitLab CI"] },
+    { "nombre": "Playwright", "icono": "fa-solid fa-masks-theater", "related_core": ["Python", "Jenkins", "GitLab CI"] },
+    { "nombre": "Git", "icono": "fa-brands fa-git-alt", "related_core": ["GitLab CI", "Jenkins"] },
+    { "nombre": "Bash", "icono": "fa-solid fa-terminal", "related_core": ["Linux", "Ansible", "Jenkins"] },
+    { "nombre": "ELK Stack", "icono": "fa-solid fa-chart-line", "related_core": ["Docker", "Linux", "Kubernetes"] },
+    { "nombre": "Grafana", "icono": "fa-solid fa-chart-area", "related_core": ["Docker", "Kubernetes", "Helm"] },
+    { "nombre": "RabbitMQ", "icono": "fa-solid fa-envelope", "related_core": ["Docker", "Python", "Jenkins"] },
+    { "nombre": "ETL Pipelines", "icono": "fa-solid fa-database", "related_core": ["Python", "Docker", "Jenkins"] }
+  ],
+  "experiencia": [
+    {
+      "empresa": "Corporación Digitel, C.A",
+      "cargo": "Especialista en Sistemas (DevOps)",
+      "ubicacion": "Caracas, Venezuela",
+      "periodo": "2022 – Presente",
+      "logros": [
+        "Diseñé e implementé +15 pipelines CI/CD (Jenkins, GitLab CI, GitHub Actions) con quality gating, E2E testing y rollback automático, reduciendo fallos en despliegue ~40%.",
+        "Administré infraestructura híbrida de +50 servidores Linux; implementé IaC con Terraform y Ansible, alcanzando 95% de despliegues reproducibles.",
+        "Contenerización de +10 servicios con Docker/Kubernetes; definí Helm charts y estrategias blue/green/canary con ArgoCD, reduciendo incidentes en producción ~30%.",
+        "Implementé observabilidad centralizada (ELK Stack, Grafana) con alertas preventivas y playbooks RCA, reduciendo MTTR de ~4h a ~45min en servicios críticos.",
+        "Automaticé validación E2E con Playwright (+200 test cases) y pipelines ETL procesando +500K eventos/mes para dashboards de auditoría operacional.",
+        "Documenté +20 plantillas IaC y runbooks; lideré workshops cross-team de gobernanza de despliegues, adoptados por 3 equipos."
+      ]
+    },
+    {
+      "empresa": "Corporación Digitel, C.A",
+      "cargo": "Especialista Junior en Sistemas",
+      "ubicacion": "Caracas, Venezuela",
+      "periodo": "2016 – 2020",
+      "logros": [
+        "Soporte y operación de plataformas IVR (+2M llamadas/mes) y middleware; participé en +30 pruebas de integración y automatización de tareas operativas recurrentes."
+      ]
+    }
+  ],
+  "educacion": [
+    {
+      "institucion": "UPTM Kléber Ramírez",
+      "ubicacion": "Mérida, Venezuela",
+      "titulo": "Ingeniería en Informática",
+      "periodo": "2009 – 2014"
+    }
+  ],
+  "certificados": [
+    { "nombre": "Architecting with GKE: Workloads", "emisor": "Google", "fecha": "Jul 2025" },
+    { "nombre": "Deploy and Manage Apigee X", "emisor": "Google", "fecha": "Jun 2025" },
+    { "nombre": "Getting Started with Terraform", "emisor": "Google", "fecha": "Jun 2025" },
+    { "nombre": "Elastic Infrastructure: Scaling and Automation", "emisor": "Google", "fecha": "Sep 2022" },
+    { "nombre": "Implement DevOps in Google Cloud", "emisor": "Google", "fecha": "Aug 2022" },
+    { "nombre": "Linux Cloud and DevOps", "emisor": "Coursera", "fecha": "Oct 2022" },
+    { "nombre": "Securing Linux Systems", "emisor": "Coursera", "fecha": "Oct 2022" },
+    { "nombre": "Managing Linux Systems", "emisor": "Coursera", "fecha": "Sep 2022" },
+    { "nombre": "Learning Linux for LFCA Certification", "emisor": "Coursera", "fecha": "Oct 2022" },
+    { "nombre": "EF SET Certificate", "emisor": "EF SET", "fecha": "Jul 2022", "detalle": "Upper Intermediate (B2)" }
+  ],
+  "github": {
+    "username": "ancrz",
+    "profile_url": "https://github.com/ancrz",
+    "bio": "DevOps • Schema-Driven Development • CI/CD • GitOps • Containerization (K8s, Docker, Helm) • GCP • Python • Go",
+    "stats": {
+      "repos": 4,
+      "stars": 3,
+      "contributions_last_year": 127
+    },
+    "repos_destacados": [
+      {
+        "nombre": "ecommerce-playground",
+        "descripcion": "Minimalist E-Commerce Platform designed for demonstration and testing purposes.",
+        "lenguaje": "TypeScript",
+        "stars": 3,
+        "url": "https://github.com/ancrz/ecommerce-playground"
+      },
+      {
+        "nombre": "cv-digital",
+        "descripcion": "Schema-Driven Digital CV — Datos en JSON, presentación en HTML.",
+        "lenguaje": "HTML/JS",
+        "stars": 0,
+        "url": "https://github.com/ancrz/cv-digital"
+      }
+    ]
+  },
+  "i18n": {
+    "en": {
+      "perfil": "DevOps Engineer with 8+ years in IT infrastructure and 4+ years specialized in DevOps/SRE. I design and implement CI/CD pipelines, Infrastructure as Code and containerized platforms in hybrid environments. Google Cloud certified. I apply Schema-Driven Development as a methodology for fast, reproducible and auditable deployments.",
+      "perfil_ats": "DevOps Engineer with 8+ years of IT infrastructure experience and 4+ years specialized in DevOps Engineering / SRE. Proven experience in CI/CD pipelines (Jenkins, GitLab CI, GitHub Actions), Infrastructure as Code (Terraform, Ansible), containerization (Docker, Kubernetes, Helm) and GitOps (ArgoCD). Google Cloud certified in GKE, Terraform, Apigee X and DevOps. Proficient in Python, Go and Bash for platform tooling. Observability with ELK Stack and Grafana. RPA automation (Playwright) and ETL pipelines. Hybrid Linux infrastructure. Available for DevOps Engineer, SRE, Platform Engineer or Cloud Engineer roles. Open to international remote work.",
+      "candidate_alignment": {
+        "nivel": "Mid-Senior (8+ yrs IT, 4+ yrs DevOps)",
+        "disponibilidad": "Immediate — International remote"
+      },
+      "labels_ats": {
+        "summary": "Professional Summary",
+        "experiencia": "Professional Experience",
+        "educacion": "Education",
+        "certificados": "Certifications",
+        "skills": "Technical Skills",
+        "tools": "Tools & Platforms",
+        "alignment": "Technical Profile"
+      },
+      "experiencia": [
+        {
+          "cargo": "Systems Specialist (DevOps)",
+          "periodo": "2022 – Present",
+          "logros": [
+            "Designed and implemented 15+ CI/CD pipelines (Jenkins, GitLab CI, GitHub Actions) with quality gating, E2E testing and automatic rollback, reducing deployment failures by ~40%.",
+            "Managed hybrid infrastructure of 50+ Linux servers; implemented IaC with Terraform and Ansible, achieving 95% reproducible deployments.",
+            "Containerized 10+ services with Docker/Kubernetes; defined Helm charts and blue/green/canary strategies with ArgoCD, reducing production incidents by ~30%.",
+            "Implemented centralized observability (ELK Stack, Grafana) with preventive alerting and RCA playbooks, reducing MTTR from ~4h to ~45min on critical services.",
+            "Automated E2E validation with Playwright (200+ test cases) and ETL pipelines processing 500K+ events/month for operational audit dashboards.",
+            "Documented 20+ IaC templates and runbooks; led cross-team deployment governance workshops, adopted by 3 teams."
+          ]
+        },
+        {
+          "cargo": "Junior Systems Specialist",
+          "periodo": "2016 – 2020",
+          "logros": [
+            "Support and operation of IVR platforms (2M+ calls/month) and middleware; participated in 30+ integration tests and automation of recurring operational tasks."
+          ]
+        }
+      ],
+      "educacion": [
+        {
+          "titulo": "Computer Engineering"
+        }
+      ],
+      "repos_destacados": [
+        {
+          "descripcion": "Minimalist E-Commerce Platform designed for demonstration and testing purposes."
+        },
+        {
+          "descripcion": "Schema-Driven Digital CV — Data in JSON, presentation in HTML."
+        }
+      ]
+    }
+  }
+}
