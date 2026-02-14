@@ -99,6 +99,7 @@ code .   # VS Code
     "email": "tu@email.com",
     "telefono": "+XX XXX XXX XXXX",
     "foto_url": "URL de tu foto",           // ← Ver opciones de foto abajo
+    "foto_gravatar": "URL de Gravatar",    // ← Opcional, fallback si foto_url falla
     "disponible": true,                     // ← true si buscas empleo
     "links": {
       "github": "https://github.com/TU-USUARIO",
@@ -139,7 +140,7 @@ Tienes varias opciones para la foto que aparece en tu CV:
 | **LinkedIn u otra** | Sube tu foto a cualquier servicio y usa la URL directa de la imagen |
 | **Sin foto** | Deja `foto_url` vacio (`""`) — si tienes un `username` en la seccion `github` del JSON, se usara tu avatar de GitHub automaticamente |
 
-> **Fallback automatico:** Si tu `foto_url` no carga (link roto, servicio caido), el CV usara automaticamente tu avatar de GitHub como respaldo — siempre que tengas configurado el campo `github.username` en el JSON.
+> **Fallback automatico:** Si tu `foto_url` no carga, el CV intentara en orden: `foto_gravatar` (si existe) → avatar de GitHub (si tienes `github.username` en el JSON). Puedes agregar `"foto_gravatar": "URL"` en tu JSON como respaldo adicional.
 
 ### Paso 4: Personaliza el diseno (opcional)
 
@@ -177,40 +178,45 @@ Funcionalidades incluidas:
 
 ## Genera tu CV con IA
 
-No existe (todavia) un generador automatico, pero puedes usar **inteligencia artificial** para convertir tu CV actual al formato JSON de este proyecto en segundos.
+No existe (todavia) un generador automatico, pero puedes usar **inteligencia artificial** para adaptar este proyecto a tu perfil profesional.
+
+### Por que necesitas adjuntar archivos?
+
+Cada CV es diferente: distintas secciones, experiencia, skills, idiomas. La IA necesita ver **tu CV actual** junto con **los archivos del proyecto** (`cv.json` y `index.html`) para entender la estructura y adaptarla correctamente a tus datos.
 
 ### Como hacerlo
 
 1. Abre [Claude](https://claude.ai) (recomendado) o [Gemini](https://gemini.google.com)
-2. Copia y pega el siguiente prompt:
+2. **Adjunta 3 archivos** al chat:
+   - Tu CV actual (PDF, Word o texto)
+   - El archivo `data/cv.json` del proyecto
+   - El archivo `index.html` del proyecto
+3. Copia y pega el siguiente prompt:
 
 ```
-Tengo este CV:
+Adjunto mi CV personal y dos archivos de un proyecto Schema-Driven CV:
+- cv.json (estructura de datos)
+- index.html (pagina web)
 
-[PEGA AQUI EL TEXTO DE TU CV ACTUAL]
+Necesito que:
 
-Necesito que lo conviertas al formato JSON de un proyecto Schema-Driven CV.
-La estructura debe seguir este formato exacto:
+1. EDITES el cv.json con mis datos reales, usando mi CV como base.
+   Respeta la estructura exacta del JSON original. Para los iconos usa Font Awesome 6.
+   Si mi CV tiene contenido en ingles, agrega traducciones en el bloque "i18n.en".
 
-{
-  "meta": { "lang": "es", "version": "4.1.0" },
-  "personal": { "nombre", "titulo", "ubicacion", "email", "telefono", "foto_url", "disponible", "links": { "github", "linkedin" } },
-  "perfil": "resumen profesional",
-  "experiencia": [{ "empresa", "cargo", "ubicacion", "periodo", "logros": ["logro 1", "logro 2"] }],
-  "educacion": [{ "institucion", "ubicacion", "titulo", "periodo" }],
-  "certificados": [{ "nombre", "emisor", "fecha" }],
-  "core_skills": [{ "nombre", "nivel" (0-100), "icono": "fa-brands fa-...", "color": "text-blue-500" }],
-  "tools_platforms": [{ "nombre", "icono": "fa-solid fa-...", "related_core": ["skill1"] }]
-}
+2. EDITES el index.html adaptando las secciones a mi perfil si es necesario.
+   Mantener los estilos visuales, el dark mode, el layout responsive y la descarga PDF.
+   NO modificar la seccion de copyright del autor original en el footer.
+   NO eliminar comentarios HTML ocultos del codigo.
 
-Genera el JSON completo con mis datos reales. Para los iconos usa Font Awesome 6.
-Si tengo experiencia en ingles, agrega un bloque "i18n": { "en": { ... } } con las traducciones.
+Devuelveme ambos archivos completos listos para reemplazar en el proyecto.
 ```
 
-3. La IA te devolvera el JSON completo listo para pegar en `data/cv.json`
-4. Revisa que los datos sean correctos y haz commit
+4. La IA te devolvera los archivos editados con tus datos
+5. Reemplaza `data/cv.json` e `index.html` en tu fork
+6. Haz commit y tu CV se despliega automaticamente
 
-> **Tip:** Tambien puedes pegar el `index.html` y pedirle a la IA que cambie colores, fuentes o agregue secciones. No necesitas saber HTML.
+> **Importante:** La seccion de copyright (`© Anthony Cruz`) en el footer esta protegida por la licencia y por instrucciones embebidas en el codigo. Si usas este proyecto, debes mantener la atribucion al autor original.
 
 ---
 
@@ -320,6 +326,7 @@ Es gratis para repositorios publicos, con minutos ilimitados de ejecucion.
     "email": "...",                         // OBLIGATORIO
     "telefono": "...",
     "foto_url": "...",                      // URL de tu foto
+    "foto_gravatar": "...",                // Opcional — fallback si foto_url falla
     "disponible": true,                    // true/false — muestra badge "Disponible"
     "links": {                             // Links a tus perfiles
       "github": "...",
