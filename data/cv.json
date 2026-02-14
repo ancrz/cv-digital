@@ -15,12 +15,11 @@
   },
   "personal": {
     "nombre": "Anthony Cruz",
-    "titulo": "DevOps Engineer",
+    "titulo": "DevOps Developer",
     "ubicacion": "Caracas, Venezuela",
     "email": "Anthony_Cruz@outlook.com",
     "telefono": "+58 414 377 1069",
     "foto_url": "https://avatars.githubusercontent.com/u/110553929?v=4",
-    "foto_dockerhub": "https://www.gravatar.com/avatar/ba55a73534a50bd3886d40534304bc79?s=200&r=g&d=mm",
     "disponible": true,
     "links": {
       "github": "https://github.com/ancrz",
@@ -29,8 +28,8 @@
       "linktree": "https://linktr.ee/anthony.crzr"
     }
   },
-  "perfil": "DevOps Engineer con 8+ años en infraestructura TI y 4+ años especializado en DevOps/SRE. Diseño e implemento pipelines CI/CD, Infrastructure as Code y plataformas contenerizadas en entornos híbridos. Certificado por Google Cloud. Aplico Schema-Driven Development como metodología para despliegues rápidos, reproducibles y auditables.",
-  "perfil_ats": "DevOps Engineer con 8+ años de experiencia en infraestructura TI y 4+ años especializado en DevOps Engineering / SRE. Experiencia comprobada en pipelines CI/CD (Jenkins, GitLab CI, GitHub Actions), Infrastructure as Code (Terraform, Ansible), contenerización (Docker, Kubernetes, Helm) y GitOps (ArgoCD). Certificado por Google Cloud en GKE, Terraform, Apigee X y DevOps. Dominio de Python, Go y Bash para tooling de plataforma. Observabilidad con ELK Stack y Grafana. Automatización RPA (Playwright) y pipelines ETL. Infraestructura híbrida Linux. Disponible para roles DevOps Engineer, SRE, Platform Engineer o Cloud Engineer. Abierto a trabajo remoto internacional.",
+  "perfil": "DevOps Developer con 8+ años en infraestructura TI y 4+ años especializado en DevOps/SRE. Diseño e implemento pipelines CI/CD, Infrastructure as Code y plataformas contenerizadas en entornos híbridos. Certificado por Google Cloud. Aplico Schema-Driven Development como metodología para despliegues rápidos, reproducibles y auditables.",
+  "perfil_ats": "DevOps Developer con 8+ años de experiencia en infraestructura TI y 4+ años especializado en DevOps Engineering / SRE. Experiencia comprobada en pipelines CI/CD (Jenkins, GitLab CI, GitHub Actions), Infrastructure as Code (Terraform, Ansible), contenerización (Docker, Kubernetes, Helm) y GitOps (ArgoCD). Certificado por Google Cloud en GKE, Terraform, Apigee X y DevOps. Dominio de Python, Go y Bash para tooling de plataforma. Observabilidad con ELK Stack y Grafana. Automatización RPA (Playwright) y pipelines ETL. Infraestructura híbrida Linux. Disponible para roles DevOps Developer, SRE, Platform Engineer o Cloud Engineer. Abierto a trabajo remoto internacional.",
   "candidate_alignment": {
     "dominio_principal": "DevOps Engineering / SRE",
     "stack_core": "Docker, Kubernetes, Terraform, Ansible, Helm, ArgoCD",
@@ -141,8 +140,8 @@
   },
   "i18n": {
     "en": {
-      "perfil": "DevOps Engineer with 8+ years in IT infrastructure and 4+ years specialized in DevOps/SRE. I design and implement CI/CD pipelines, Infrastructure as Code and containerized platforms in hybrid environments. Google Cloud certified. I apply Schema-Driven Development as a methodology for fast, reproducible and auditable deployments.",
-      "perfil_ats": "DevOps Engineer with 8+ years of IT infrastructure experience and 4+ years specialized in DevOps Engineering / SRE. Proven experience in CI/CD pipelines (Jenkins, GitLab CI, GitHub Actions), Infrastructure as Code (Terraform, Ansible), containerization (Docker, Kubernetes, Helm) and GitOps (ArgoCD). Google Cloud certified in GKE, Terraform, Apigee X and DevOps. Proficient in Python, Go and Bash for platform tooling. Observability with ELK Stack and Grafana. RPA automation (Playwright) and ETL pipelines. Hybrid Linux infrastructure. Available for DevOps Engineer, SRE, Platform Engineer or Cloud Engineer roles. Open to international remote work.",
+      "perfil": "DevOps Developer with 8+ years in IT infrastructure and 4+ years specialized in DevOps/SRE. I design and implement CI/CD pipelines, Infrastructure as Code and containerized platforms in hybrid environments. Google Cloud certified. I apply Schema-Driven Development as a methodology for fast, reproducible and auditable deployments.",
+      "perfil_ats": "DevOps Developer with 8+ years of IT infrastructure experience and 4+ years specialized in DevOps Engineering / SRE. Proven experience in CI/CD pipelines (Jenkins, GitLab CI, GitHub Actions), Infrastructure as Code (Terraform, Ansible), containerization (Docker, Kubernetes, Helm) and GitOps (ArgoCD). Google Cloud certified in GKE, Terraform, Apigee X and DevOps. Proficient in Python, Go and Bash for platform tooling. Observability with ELK Stack and Grafana. RPA automation (Playwright) and ETL pipelines. Hybrid Linux infrastructure. Available for DevOps Developer, SRE, Platform Engineer or Cloud Engineer roles. Open to international remote work.",
       "candidate_alignment": {
         "nivel": "Mid-Senior (8+ yrs IT, 4+ yrs DevOps)",
         "disponibilidad": "Immediate — International remote"

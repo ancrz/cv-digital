@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anthony Cruz — DevOps Engineer</title>
-  <meta name="description" content="DevOps Engineer — 8+ años TI, 4+ años DevOps/SRE. CI/CD, IaC, Kubernetes, Docker, Terraform. Certificado Google Cloud.">
+  <title>Anthony Cruz — DevOps Developer</title>
+  <meta name="description" content="DevOps Developer — 8+ años TI, 4+ años DevOps/SRE. CI/CD, IaC, Kubernetes, Docker, Terraform. Certificado Google Cloud.">
   <meta name="author" content="Anthony Cruz">
-  <meta property="og:title" content="Anthony Cruz — DevOps Engineer">
-  <meta property="og:description" content="DevOps Engineer — 8+ años TI, 4+ años DevOps/SRE. Certificado Google Cloud. Disponible remoto.">
+  <meta property="og:title" content="Anthony Cruz — DevOps Developer">
+  <meta property="og:description" content="DevOps Developer — 8+ años TI, 4+ años DevOps/SRE. Certificado Google Cloud. Disponible remoto.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ancrz.github.io/cv-digital/">
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/110553929?v=4">
-  <meta name="keywords" content="DevOps Engineer, SRE, Platform Engineer, Cloud Engineer, CI/CD, Docker, Kubernetes, Terraform, Ansible, Helm, Jenkins, GitLab CI, GitHub Actions, ArgoCD, GitOps, Python, Go, GCP, IaC, Infrastructure as Code, ELK Stack, Grafana, Observability, Containerization, Linux, Schema-Driven Development">
+  <meta name="keywords" content="DevOps Developer, SRE, Platform Engineer, Cloud Engineer, CI/CD, Docker, Kubernetes, Terraform, Ansible, Helm, Jenkins, GitLab CI, GitHub Actions, ArgoCD, GitOps, Python, Go, GCP, IaC, Infrastructure as Code, ELK Stack, Grafana, Observability, Containerization, Linux, Schema-Driven Development">
 
   <!-- JSON-LD: Structured data for search engines and AI scrapers -->
   <script type="application/ld+json">
@@ -19,8 +19,8 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Anthony Cruz",
-    "jobTitle": "DevOps Engineer",
-    "description": "DevOps Engineer con 8+ años en infraestructura TI y 4+ años en DevOps/SRE. CI/CD, IaC, Kubernetes, Docker, Terraform, GitOps. Certificado Google Cloud.",
+    "jobTitle": "DevOps Developer",
+    "description": "DevOps Developer con 8+ años en infraestructura TI y 4+ años en DevOps/SRE. CI/CD, IaC, Kubernetes, Docker, Terraform, GitOps. Certificado Google Cloud.",
     "url": "https://ancrz.github.io/cv-digital/",
     "image": "https://avatars.githubusercontent.com/u/110553929?v=4",
     "email": "Anthony_Cruz@outlook.com",
@@ -528,7 +528,7 @@
         month: 'mes',
         months: 'meses',
         linkCopied: 'Link copiado al portapapeles',
-        shareText: 'DevOps Engineer con 8+ años en TI y 4+ en DevOps/SRE. Docker, Kubernetes, Terraform, CI/CD. Certificado Google Cloud. Disponible remoto.',
+        shareText: 'DevOps Developer con 8+ años en TI y 4+ en DevOps/SRE. Docker, Kubernetes, Terraform, CI/CD. Certificado Google Cloud. Disponible remoto.',
         present: 'Presente',
         // ATS print labels
         ats_dominio: 'Dominio',
@@ -562,7 +562,7 @@
         month: 'month',
         months: 'months',
         linkCopied: 'Link copied to clipboard',
-        shareText: 'DevOps Engineer with 8+ years in IT and 4+ in DevOps/SRE. Docker, Kubernetes, Terraform, CI/CD. Google Cloud certified. Available remote.',
+        shareText: 'DevOps Developer with 8+ years in IT and 4+ in DevOps/SRE. Docker, Kubernetes, Terraform, CI/CD. Google Cloud certified. Available remote.',
         present: 'Present',
         ats_dominio: 'Domain',
         ats_stack: 'Core Stack',
@@ -654,13 +654,18 @@
       const el = document.getElementById('header');
       const waPhone = p.telefono.replace(/[+\s]/g, '');
       const perfil = i18nField(data, 'perfil');
+      // Photo fallback chain: foto_url → GitHub avatar (from username)
+      const ghUsername = data.github && data.github.username;
+      const ghAvatar = ghUsername ? `https://avatars.githubusercontent.com/${ghUsername}` : '';
+      const primaryPhoto = p.foto_url || ghAvatar;
+      const fallbackPhoto = ghAvatar || p.foto_url || '';
       el.innerHTML = `
         <div class="p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
           <!-- Avatar -->
           <div class="flex-shrink-0 relative">
             <div class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-accent-violet overflow-hidden shadow-lg bg-gray-200 dark:bg-gray-700">
-              <img src="${p.foto_dockerhub || p.foto_url}" alt="${p.nombre}" class="w-full h-full object-cover"
-                   onerror="this.src='${p.foto_url}'">
+              <img src="${primaryPhoto}" alt="${p.nombre}" class="w-full h-full object-cover"
+                   onerror="if(this.dataset.tried){this.style.display='none'}else{this.dataset.tried='1';this.src='${fallbackPhoto}'}">
             </div>
             ${p.disponible ? `<div class="absolute bottom-2 right-2 w-6 h-6 bg-accent-green border-4 border-white dark:border-navy-900 rounded-full" title="${t('available')}"></div>` : ''}
           </div>
@@ -1275,7 +1280,7 @@
     // =========================================================================
     function shareCV() {
       const shareData = {
-        title: 'Anthony Cruz — DevOps Engineer',
+        title: 'Anthony Cruz — DevOps Developer',
         text: t('shareText'),
         url: window.location.href
       };
