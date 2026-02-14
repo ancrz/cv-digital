@@ -382,8 +382,8 @@ Es gratis para repositorios publicos, con minutos ilimitados de ejecucion.
 
 ## Preguntas Frecuentes
 
-**Es gratis?**
-Si. GitHub Pages es gratuito para repositorios publicos. No hay costos ocultos.
+**Es gratis? Tiene limites?**
+Si, GitHub Pages es gratuito para repositorios publicos. Limites: el sitio no puede pesar mas de **1 GB**, el ancho de banda es de **100 GB/mes**, y **solo soporta contenido estatico** (HTML, CSS, JS, imagenes — no PHP, bases de datos, ni backend). Los builds de GitHub Actions tienen un limite de **10 min/build** y los repos publicos tienen minutos ilimitados. Para un CV digital esto es mas que suficiente.
 
 **Puedo usarlo en otro idioma?**
 Si. El JSON base esta en espanol, pero puedes cambiar todo el texto a cualquier idioma. Si quieres soporte bilingue, agrega traducciones en el bloque `i18n`.
