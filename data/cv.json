@@ -19,8 +19,9 @@
     "ubicacion": "Caracas, Venezuela",
     "email": "Anthony_Cruz@outlook.com",
     "telefono": "+58 414 377 1069",
-    "foto_url": "https://avatars.githubusercontent.com/u/110553929?v=4",
-    "foto_gravatar": "https://www.gravatar.com/avatar/ba55a73534a50bd3886d40534304bc79?s=200&r=g&d=mm",
+    "foto_url": "https://2.gravatar.com/avatar/efee01abbb2d3bca9e3d8c7ef4695995acf1e4436cb4a4b6172de4df13fbfb56?size=512",
+    "foto_fallback": "https://avatars.githubusercontent.com/u/110553929?v=4",
+    "cedula": "18709512",
     "disponible": true,
     "links": {
       "github": "https://github.com/ancrz",

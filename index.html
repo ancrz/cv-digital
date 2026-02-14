@@ -315,7 +315,7 @@
       /* ── HEADER: clean professional banner ── */
       #header { border-radius: 0 !important; box-shadow: none !important; border: none !important; border-bottom: 3px solid #4f46e5 !important; margin-bottom: 0.2rem !important; overflow: visible !important; background: #f8f7ff !important; }
       #header > div { padding: 0.35rem 0.5rem !important; flex-direction: column !important; align-items: flex-start !important; gap: 0.05rem !important; }
-      #header .flex-shrink-0 { display: none !important; }
+      #header .flex-shrink-0.relative { display: none !important; }
       #header .bg-accent-green { display: none !important; }
       #header .contact-icon-btn { display: none !important; }
       #header a[href*="whatsapp"] { display: none !important; }
@@ -323,13 +323,26 @@
       #header h1 { font-size: 1.5rem !important; margin-bottom: 0 !important; line-height: 1.1 !important; color: #1a1a1a !important; font-weight: 800 !important; }
       #header h2 { font-size: 0.95rem !important; color: #4f46e5 !important; margin: 0 !important; padding: 0 !important; border: none !important; text-transform: none !important; letter-spacing: normal !important; font-weight: 600 !important; }
       #header p { display: none !important; }
-      #header-contact { border: none !important; padding: 0.15rem 0 0 !important; margin: 0 !important; min-width: unset !important; flex-direction: row !important; flex-wrap: wrap !important; gap: 0.1rem 0.6rem !important; align-items: center !important; justify-content: flex-start !important; width: 100% !important; }
-      #header-contact > a, #header-contact > div { font-size: 0.82rem !important; color: #374151 !important; width: auto !important; justify-content: flex-start !important; }
+      #header-contact { display: flex !important; border: none !important; padding: 0.1rem 0 0 !important; margin: 0 !important; min-width: unset !important; flex-direction: column !important; gap: 0.02rem !important; align-items: flex-start !important; width: 100% !important; }
+      #header-contact > a, #header-contact > div { display: flex !important; font-size: 0.82rem !important; color: #374151 !important; width: auto !important; }
       #header-contact span { font-size: 0.82rem !important; color: #374151 !important; }
-      #header-contact .contact-sep { display: inline !important; color: #9ca3af !important; font-size: 0.82rem !important; }
-      #header-contact .contact-print-link { display: inline !important; font-size: 0.82rem !important; color: #374151 !important; }
       #header-contact .justify-between { display: none !important; }
       #header-contact i { display: none !important; }
+      /* Print: show hidden items */
+      #header-contact .ct-id { display: block !important; font-size: 0.82rem !important; color: #374151 !important; }
+      #header-contact .ct-linkedin { display: block !important; font-size: 0.82rem !important; }
+      #header-contact .ct-linkedin a { color: #374151 !important; font-size: 0.82rem !important; }
+      /* Print: labeled contact — Location first, then Email, Tel, ID */
+      #header-contact .ct-location { order: 1 !important; }
+      #header-contact .ct-email { order: 2 !important; }
+      #header-contact .ct-phone { order: 3 !important; }
+      #header-contact .ct-id { order: 4 !important; }
+      #header-contact .ct-linkedin { order: 5 !important; }
+      #header-contact .justify-between { order: 99 !important; }
+      /* Print: add labels */
+      #header-contact .ct-email span::before { content: "Email: " !important; font-weight: 600 !important; }
+      #header-contact .ct-phone > span.font-medium::before { content: "Tel: " !important; font-weight: 600 !important; }
+      #header-contact .ct-phone .contact-icon-btn { display: none !important; }
 
       /* ── SECTION HEADINGS: ATS standard with indigo accent ── */
       h2 { color: #1a1a1a !important; font-size: 0.9rem !important; text-transform: uppercase !important; letter-spacing: 0.06em !important; border-bottom: 2px solid #4f46e5 !important; padding-bottom: 0.1rem !important; margin-bottom: 0.2rem !important; margin-top: 0.55rem !important; page-break-after: avoid !important; font-weight: 700 !important; }
@@ -693,11 +706,11 @@
       const el = document.getElementById('header');
       const waPhone = p.telefono.replace(/[+\s]/g, '');
       const perfil = i18nField(data, 'perfil');
-      // Photo fallback chain: foto_url → foto_gravatar → GitHub avatar
+      // Photo fallback chain: foto_url → foto_fallback → GitHub avatar
       const ghUsername = data.github && data.github.username;
       const ghAvatar = ghUsername ? `https://avatars.githubusercontent.com/${ghUsername}` : '';
-      const primaryPhoto = p.foto_url || p.foto_gravatar || ghAvatar;
-      const fallbackPhoto = p.foto_gravatar || ghAvatar || p.foto_url || '';
+      const primaryPhoto = p.foto_url || p.foto_fallback || ghAvatar;
+      const fallbackPhoto = p.foto_fallback || ghAvatar || '';
       el.innerHTML = `
         <div class="p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
           <!-- Avatar -->
@@ -719,31 +732,29 @@
           <!-- Contact -->
           <div id="header-contact" class="flex flex-col items-center gap-4 md:min-w-[260px] border-t md:border-t-0 md:border-l border-gray-200 dark:border-gray-700 pt-6 md:pt-0 md:pl-8 mt-4 md:mt-0 flex-shrink-0">
             <!-- Email: full visible -->
-            <a href="mailto:${p.email}" class="flex items-center justify-center gap-3 w-full text-gray-700 dark:text-gray-200 hover:text-accent-violet dark:hover:text-accent-violet transition-colors">
+            <a href="mailto:${p.email}" class="ct-email flex items-center justify-center gap-3 w-full text-gray-700 dark:text-gray-200 hover:text-accent-violet dark:hover:text-accent-violet transition-colors">
               <i class="fa-solid fa-envelope text-accent-violet text-lg"></i>
               <span class="text-sm font-medium">${p.email}</span>
             </a>
-            <span class="contact-sep hidden">|</span>
 
             <!-- Phone: full visible + WhatsApp -->
-            <div class="flex items-center justify-center gap-3 w-full">
+            <div class="ct-phone flex items-center justify-center gap-3 w-full">
               <i class="fa-solid fa-phone text-accent-violet text-lg"></i>
               <span class="text-sm font-medium text-gray-700 dark:text-gray-200">${p.telefono}</span>
               <a href="https://api.whatsapp.com/send?phone=${waPhone}" target="_blank" rel="noopener" class="contact-icon-btn whatsapp ml-1" title="Chat en WhatsApp" style="width:32px;height:32px;">
                 <i class="fa-brands fa-whatsapp text-base"></i>
               </a>
             </div>
-            <span class="contact-sep hidden">|</span>
 
             <!-- Location -->
-            <div class="flex items-center justify-center gap-3 w-full text-gray-500 dark:text-gray-400">
+            <div class="ct-location flex items-center justify-center gap-3 w-full text-gray-500 dark:text-gray-400">
               <i class="fa-solid fa-location-dot text-accent-violet text-lg"></i>
               <span class="text-sm">${p.ubicacion}</span>
             </div>
-            <span class="contact-sep hidden">|</span>
 
-            <!-- LinkedIn: visible only in print -->
-            <a href="${p.links.linkedin}" class="hidden text-sm text-gray-700 dark:text-gray-200 contact-print-link">${p.links.linkedin.replace('https://www.','')}</a>
+            <!-- Print-only: ID/Cedula + LinkedIn -->
+            ${p.cedula ? `<div class="ct-id hidden"><span>ID: ${p.cedula}</span></div>` : ''}
+            <div class="ct-linkedin hidden"><a href="${p.links.linkedin}">${p.links.linkedin.replace('https://www.','')}</a></div>
 
             <!-- Icon-only link buttons: distributed in mobile -->
             <div class="flex items-center justify-between w-full pt-2 px-4 md:px-0">

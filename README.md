@@ -99,7 +99,8 @@ code .   # VS Code
     "email": "tu@email.com",
     "telefono": "+XX XXX XXX XXXX",
     "foto_url": "URL de tu foto",           // ← Ver opciones de foto abajo
-    "foto_gravatar": "URL de Gravatar",    // ← Opcional, fallback si foto_url falla
+    "foto_fallback": "URL alternativa",     // ← Opcional, fallback si foto_url falla
+    "cedula": "12345678",                  // ← Opcional, aparece solo en el PDF descargable
     "disponible": true,                     // ← true si buscas empleo
     "links": {
       "github": "https://github.com/TU-USUARIO",
@@ -140,7 +141,7 @@ Tienes varias opciones para la foto que aparece en tu CV:
 | **LinkedIn u otra** | Sube tu foto a cualquier servicio y usa la URL directa de la imagen |
 | **Sin foto** | Deja `foto_url` vacio (`""`) — si tienes un `username` en la seccion `github` del JSON, se usara tu avatar de GitHub automaticamente |
 
-> **Fallback automatico:** Si tu `foto_url` no carga, el CV intentara en orden: `foto_gravatar` (si existe) → avatar de GitHub (si tienes `github.username` en el JSON). Puedes agregar `"foto_gravatar": "URL"` en tu JSON como respaldo adicional.
+> **Fallback automatico:** Si tu `foto_url` no carga, el CV intentara en orden: `foto_fallback` (si existe) → avatar de GitHub (si tienes `github.username` en el JSON). Puedes agregar `"foto_fallback": "URL"` en tu JSON como respaldo adicional.
 
 ### Paso 4: Personaliza el diseno (opcional)
 
@@ -178,45 +179,62 @@ Funcionalidades incluidas:
 
 ## Genera tu CV con IA
 
-No existe (todavia) un generador automatico, pero puedes usar **inteligencia artificial** para adaptar este proyecto a tu perfil profesional.
+No existe (todavia) un generador automatico, pero puedes usar **inteligencia artificial** para adaptar este proyecto a tu perfil profesional en minutos.
 
-### Por que necesitas adjuntar archivos?
+### Por que necesitas adjuntar 3 archivos?
 
-Cada CV es diferente: distintas secciones, experiencia, skills, idiomas. La IA necesita ver **tu CV actual** junto con **los archivos del proyecto** (`cv.json` y `index.html`) para entender la estructura y adaptarla correctamente a tus datos.
+Cada CV es diferente: distintas secciones, cantidad de experiencia, skills, idiomas. La IA necesita ver estos **3 archivos juntos** para entender tanto tu perfil como la estructura del proyecto:
+
+| Archivo | Que es | Por que lo necesita la IA |
+|---|---|---|
+| **Tu CV** (PDF/Word/texto) | Tu curriculum actual | Es la **base de datos**: la IA extrae tu informacion de aqui |
+| **`data/cv.json`** | Estructura de datos del proyecto | La IA adapta tu informacion a este formato exacto |
+| **`index.html`** | Pagina web + estilos + logica de impresion | La IA adapta las secciones, meta tags y el PDF descargable |
+
+> Sin los 3 archivos la IA no puede producir un resultado correcto: sin tu CV no tiene datos, sin el JSON no sabe la estructura, sin el HTML no puede adaptar la pagina ni el PDF.
 
 ### Como hacerlo
 
 1. Abre [Claude](https://claude.ai) (recomendado) o [Gemini](https://gemini.google.com)
-2. **Adjunta 3 archivos** al chat:
-   - Tu CV actual (PDF, Word o texto)
-   - El archivo `data/cv.json` del proyecto
-   - El archivo `index.html` del proyecto
+2. **Adjunta los 3 archivos** al chat (tu CV + `data/cv.json` + `index.html`)
 3. Copia y pega el siguiente prompt:
 
 ```
-Adjunto mi CV personal y dos archivos de un proyecto Schema-Driven CV:
-- cv.json (estructura de datos)
-- index.html (pagina web)
+Adjunto 3 archivos:
+1. Mi CV personal (el documento base con mis datos reales)
+2. cv.json (estructura de datos del proyecto Schema-Driven CV)
+3. index.html (pagina web con estilos, logica y version de impresion)
 
-Necesito que:
+Usando mi CV como fuente de verdad, necesito que:
 
-1. EDITES el cv.json con mis datos reales, usando mi CV como base.
-   Respeta la estructura exacta del JSON original. Para los iconos usa Font Awesome 6.
-   Si mi CV tiene contenido en ingles, agrega traducciones en el bloque "i18n.en".
+1. EDITES cv.json:
+   - Reemplaza TODOS los datos con mi informacion real extraida de mi CV.
+   - Respeta la estructura exacta del JSON original (mismos campos, misma jerarquia).
+   - Adapta los iconos usando Font Awesome 6 segun mis skills y herramientas.
+   - Si mi CV tiene contenido en ingles, agrega las traducciones en el bloque "i18n.en".
+   - Actualiza la seccion "meta" (labels, version) segun corresponda.
 
-2. EDITES el index.html adaptando las secciones a mi perfil si es necesario.
-   Mantener los estilos visuales, el dark mode, el layout responsive y la descarga PDF.
-   NO modificar la seccion de copyright del autor original en el footer.
-   NO eliminar comentarios HTML ocultos del codigo.
+2. EDITES index.html:
+   - Adapta las secciones visibles a mi perfil (agrega o elimina secciones segun mi CV).
+   - Actualiza los meta tags (<title>, og:title, description, keywords, JSON-LD)
+     para que reflejen MI nombre, MI cargo y MIS skills.
+   - MANTENER intactos: estilos visuales, dark mode, layout responsive, i18n toggle.
+   - NO modificar la seccion de copyright del autor original en el footer.
+   - NO eliminar comentarios HTML ocultos del codigo.
 
-Devuelveme ambos archivos completos listos para reemplazar en el proyecto.
+3. ADAPTES la version de impresion (PDF):
+   - El CV descargable (via boton "Descargar CV") debe reflejar MIS datos.
+   - Debe ser compatible con sistemas ATS (Applicant Tracking Systems):
+     texto plano, sin decoracion visual, estructura clara con headings.
+   - El layout de impresion debe seguir el patron del CV base adjunto.
+
+Devuelveme los 2 archivos completos (cv.json e index.html) listos para
+reemplazar en el proyecto sin necesidad de edicion adicional.
 ```
 
-4. La IA te devolvera los archivos editados con tus datos
+4. La IA te devolvera los 2 archivos editados con tus datos
 5. Reemplaza `data/cv.json` e `index.html` en tu fork
-6. Haz commit y tu CV se despliega automaticamente
-
-> **Importante:** La seccion de copyright (`© Anthony Cruz`) en el footer esta protegida por la licencia y por instrucciones embebidas en el codigo. Si usas este proyecto, debes mantener la atribucion al autor original.
+6. Haz commit y tu CV se despliega automaticamente (web + PDF)
 
 ---
 
@@ -326,7 +344,8 @@ Es gratis para repositorios publicos, con minutos ilimitados de ejecucion.
     "email": "...",                         // OBLIGATORIO
     "telefono": "...",
     "foto_url": "...",                      // URL de tu foto
-    "foto_gravatar": "...",                // Opcional — fallback si foto_url falla
+    "foto_fallback": "...",                // Opcional — fallback si foto_url falla
+    "cedula": "...",                       // Opcional — aparece solo en el PDF descargable
     "disponible": true,                    // true/false — muestra badge "Disponible"
     "links": {                             // Links a tus perfiles
       "github": "...",
