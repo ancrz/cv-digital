@@ -117,25 +117,25 @@
   "github": {
     "username": "ancrz",
     "profile_url": "https://github.com/ancrz",
-    "bio": "DevOps • Schema-Driven Development • CI/CD • GitOps • Containerization (K8s, Docker, Helm) • GCP • Python • Go",
+    "bio": "DevOps • Schema-Driven Development • CI/CD • Automation • Containerization (K8s, Docker, Helm) • GCP • Python • Go • RPA",
     "stats": {
-      "repos": 6,
-      "stars": 5,
-      "contributions_last_year": 127
+      "repos": 4,
+      "stars": 11,
+      "contributions_last_year": 259
     },
     "repos_destacados": [
       {
         "nombre": "penpot-mcp-server",
         "descripcion": "MCP server para Penpot self-hosted — diseño UI/UX y prototipado con IA (66 tools).",
         "lenguaje": "Python",
-        "stars": 2,
+        "stars": 4,
         "url": "https://github.com/ancrz/penpot-mcp-server"
       },
       {
         "nombre": "skill-swarm-mcp",
         "descripcion": "MCP server para descubrimiento, instalación y orquestación de skills de agentes IA. BM25F matching, 4 registros, trust scoring.",
         "lenguaje": "Python",
-        "stars": 0,
+        "stars": 3,
         "url": "https://github.com/ancrz/skill-swarm-mcp"
       },
       {
