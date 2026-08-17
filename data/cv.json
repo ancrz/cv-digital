@@ -1,8 +1,8 @@
 {
   "meta": {
     "lang": "es",
-    "version": "4.1.0",
-    "last_updated": "2026-02-12",
+    "version": "5.0.0",
+    "last_updated": "2026-08-16",
     "labels_ats": {
       "summary": "Resumen Profesional",
       "experiencia": "Experiencia Profesional",
@@ -71,10 +71,23 @@
   ],
   "experiencia": [
     {
+      "empresa": "BBVA Provincial S.A.",
+      "cargo": "Infrastructure & IT Ops Associate",
+      "ubicacion": "Caracas, Venezuela",
+      "periodo": "2026",
+      "logros": [
+        "Bases de Datos & HA: Migraciones, optimización y homologación técnica y estandarización operativa unificada para Oracle (Data Guard, ASM, RAC, Restart) y SQL Server (HA + Always On).",
+        "Contenerización & Cloud: GCP (GKE), Docker, Kubernetes, Helm. Contenerización de bases de datos y despliegues Blue/Green/Canary.",
+        "DevOps, GitOps & Automatización: CI/CD (GitLab, Jenkins), Ansible AAP, Terraform. Infraestructura declarativa y scripts para autogestión backend.",
+        "IA Agéntica: Integración A2A, protocolos MCP, desarrollo seguro vía LLMs y Fine-Tuning (Vertex AI / PyTorch).",
+        "SRE & Middleware: WebLogic 12c, Linux/Windows. Pipelines ETL de logs/eventos, alerting, RCA, runbooks y RPA (Playwright/Selenium) en pipelines."
+      ]
+    },
+    {
       "empresa": "Corporación Digitel, C.A",
       "cargo": "Especialista en Sistemas (DevOps)",
       "ubicacion": "Caracas, Venezuela",
-      "periodo": "2022 – Presente",
+      "periodo": "2022–2025",
       "logros": [
         "Diseñé e implementé +15 pipelines CI/CD (Jenkins, GitLab CI, GitHub Actions) con quality gating, E2E testing y rollback automático, reduciendo fallos en despliegue ~40%.",
         "Administré infraestructura híbrida de +50 servidores Linux; implementé IaC con Terraform y Ansible, alcanzando 95% de despliegues reproducibles.",
@@ -166,8 +179,19 @@
       },
       "experiencia": [
         {
+          "cargo": "Infrastructure & IT Ops Associate",
+          "periodo": "2026",
+          "logros": [
+            "Databases & HA: Migrations, optimization, technical standardization, and unified operational standardization for Oracle (Data Guard, ASM, RAC, Restart) and SQL Server (HA + Always On).",
+            "Containerization & Cloud: GCP (GKE), Docker, Kubernetes, Helm. Database containerization and Blue/Green/Canary deployments.",
+            "DevOps, GitOps & Automation: CI/CD (GitLab, Jenkins), Ansible AAP, Terraform. Declarative infrastructure and backend self-management scripts.",
+            "Agentic AI: A2A integration, MCP protocols, secure development via LLMs and Fine-Tuning (Vertex AI / PyTorch).",
+            "SRE & Middleware: WebLogic 12c, Linux/Windows. ETL pipelines for logs/events, alerting, RCA, runbooks and RPA (Playwright/Selenium) in pipelines."
+          ]
+        },
+        {
           "cargo": "Systems Specialist (DevOps)",
-          "periodo": "2022 – Present",
+          "periodo": "2022–2025",
           "logros": [
             "Designed and implemented 15+ CI/CD pipelines (Jenkins, GitLab CI, GitHub Actions) with quality gating, E2E testing and automatic rollback, reducing deployment failures by ~40%.",
             "Managed hybrid infrastructure of 50+ Linux servers; implemented IaC with Terraform and Ansible, achieving 95% reproducible deployments.",
