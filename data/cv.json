@@ -1,8 +1,8 @@
 {
   "meta": {
     "lang": "es",
-    "version": "5.0.0",
-    "last_updated": "2026-08-16",
+    "version": "5.1.0",
+    "last_updated": "2026-10-29",
     "labels_ats": {
       "summary": "Resumen Profesional",
       "experiencia": "Experiencia Profesional",
@@ -130,33 +130,82 @@
   "github": {
     "username": "ancrz",
     "profile_url": "https://github.com/ancrz",
-    "bio": "DevOps • Schema-Driven Development • CI/CD • GitOps • Containerization (K8s, Docker, Helm) • GCP • Python • Go",
+    "bio": "DevOps Developer • CI/CD • Automation • Containerization (K8s, Docker, Helm) • GCP • Python • Go • RPA",
     "stats": {
-      "repos": 6,
-      "stars": 5,
-      "contributions_last_year": 127
+      "repos": 10,
+      "stars": 23,
+      "contributions_last_year": 625
     },
     "repos_destacados": [
       {
-        "nombre": "penpot-mcp-server",
-        "descripcion": "MCP server para Penpot self-hosted — diseño UI/UX y prototipado con IA (66 tools).",
+        "nombre": "agent-execution-plane",
+        "descripcion": "Control plane y suite de ejecución de alta resiliencia para agentes de IA en Linux (memfd in-RAM, sandbox bwrap, eBPF, memoria semántica sqlite-vec).",
         "lenguaje": "Python",
-        "stars": 2,
+        "stars": 0,
+        "url": "https://github.com/ancrz/agent-execution-plane"
+      },
+      {
+        "nombre": "pipeline-agentic",
+        "descripcion": "Framework multi-agente de referencia que implementa el protocolo Topos Integrity Protocol con arquitectura orquestada de 6 etapas.",
+        "lenguaje": "Python",
+        "stars": 1,
+        "url": "https://github.com/ancrz/pipeline-agentic"
+      },
+      {
+        "nombre": "penpot-mcp-server",
+        "descripcion": "MCP server para Penpot self-hosted — diseño UI/UX y prototipado asistido por IA (66 tools).",
+        "lenguaje": "Python",
+        "stars": 12,
         "url": "https://github.com/ancrz/penpot-mcp-server"
       },
       {
         "nombre": "skill-swarm-mcp",
-        "descripcion": "MCP server para descubrimiento, instalación y orquestación de skills de agentes IA. BM25F matching, 4 registros, trust scoring.",
+        "descripcion": "MCP server para descubrimiento, instalación y orquestación de skills de agentes IA. BM25F matching, 4 registros y trust scoring.",
         "lenguaje": "Python",
-        "stars": 0,
+        "stars": 3,
         "url": "https://github.com/ancrz/skill-swarm-mcp"
       },
       {
+        "nombre": "sdk-agent-pipeline",
+        "descripcion": "Motor modular para agentes Google ADK sobre A2A con gateway HA de modelos y protección de credenciales.",
+        "lenguaje": "Python",
+        "stars": 1,
+        "url": "https://github.com/ancrz/sdk-agent-pipeline"
+      },
+      {
+        "nombre": "vault-transit-stack",
+        "descripcion": "Stack de seguridad de tránsito con OpenBao (Vault): KMS estático/autounseal, AppRoles por CIDR y ciclo de vida de tokens efímeros.",
+        "lenguaje": "Shell",
+        "stars": 1,
+        "url": "https://github.com/ancrz/vault-transit-stack"
+      },
+      {
+        "nombre": "termux-linux-deployer",
+        "descripcion": "Despliegue automatizado e idempotente de entorno de desarrollo (Claude Code, Gemini CLI, code-server) en Termux/Ubuntu ARM64.",
+        "lenguaje": "Shell",
+        "stars": 1,
+        "url": "https://github.com/ancrz/termux-linux-deployer"
+      },
+      {
+        "nombre": "termux-ubuntu-bootstrap",
+        "descripcion": "Bootstrapper por capas en Bash para entorno de desarrollo reproducible Ubuntu PRoot sobre Android/Termux.",
+        "lenguaje": "Shell",
+        "stars": 0,
+        "url": "https://github.com/ancrz/termux-ubuntu-bootstrap"
+      },
+      {
         "nombre": "ecommerce-playground",
-        "descripcion": "Minimalist E-Commerce Platform designed for demonstration and testing purposes.",
+        "descripcion": "Plataforma de comercio electrónico minimalista diseñada para pruebas, demostración y testing de CI/CD.",
         "lenguaje": "TypeScript",
         "stars": 3,
         "url": "https://github.com/ancrz/ecommerce-playground"
+      },
+      {
+        "nombre": "cv-digital",
+        "descripcion": "Curículum digital interactivo schema-driven con soporte multi-idioma (ES/EN) y despliegue automatizado en GitHub Pages.",
+        "lenguaje": "HTML",
+        "stars": 1,
+        "url": "https://github.com/ancrz/cv-digital"
       }
     ]
   },
@@ -216,13 +265,34 @@
       ],
       "repos_destacados": [
         {
+          "descripcion": "Control plane and high-resilience execution suite for AI agents on Linux (in-RAM memfd, bwrap sandbox, eBPF, sqlite-vec semantic memory)."
+        },
+        {
+          "descripcion": "Multi-agent reference framework enforcing the Topos Integrity Protocol with 6-stage concurrent agent orchestration."
+        },
+        {
           "descripcion": "MCP server for self-hosted Penpot — AI-powered UI/UX design and prototyping (66 tools)."
         },
         {
           "descripcion": "MCP server for AI agent skill discovery, installation, and orchestration. BM25F matching, 4-registry search, trust scoring."
         },
         {
+          "descripcion": "Modular agent engine serving Google ADK agents over A2A with HA model gateway and credential isolation."
+        },
+        {
+          "descripcion": "Transit security stack with OpenBao for zero-trust KMS, per-subnet AppRole policies, and ephemeral root token lifecycle."
+        },
+        {
+          "descripcion": "Automated idempotent dev environment deployment (Claude Code, Gemini CLI, code-server) in Termux/Ubuntu ARM64."
+        },
+        {
+          "descripcion": "Layered Bash bootstrapper for reproducible Ubuntu PRoot development environment on Android/Termux."
+        },
+        {
           "descripcion": "Minimalist E-Commerce Platform designed for demonstration and testing purposes."
+        },
+        {
+          "descripcion": "Interactive schema-driven digital curriculum with bilingual support (ES/EN) and automated GitHub Pages deployment."
         }
       ]
     }
