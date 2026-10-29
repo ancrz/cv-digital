@@ -582,6 +582,22 @@
         linkCopied: 'Link copiado al portapapeles',
         shareText: 'DevOps Developer con 8+ años en TI y 4+ en DevOps/SRE. Docker, Kubernetes, Terraform, CI/CD. Certificado Google Cloud. Disponible remoto.',
         present: 'Presente',
+        // GitHub Activity
+        githubActivity: 'Actividad en GitHub',
+        lastYearContribs: 'Último año: {n} Contribuciones',
+        daysMon: 'Lun',
+        daysWed: 'Mié',
+        daysFri: 'Vie',
+        quarterQ1: 'Q1 (Ene–Mar)',
+        quarterQ2: 'Q2 (Abr–Jun)',
+        quarterQ3: 'Q3 (Jul–Sep)',
+        quarterQ4: 'Q4 (Oct–Dic)',
+        less: 'Menos',
+        more: 'Más',
+        ghRepos: 'Repos',
+        ghStars: 'Estrellas',
+        ghContributions: 'Contribuciones',
+        openProjects: 'Proyectos Open Source',
         // ATS print labels
         ats_dominio: 'Dominio',
         ats_stack: 'Stack Core',
@@ -616,6 +632,22 @@
         linkCopied: 'Link copied to clipboard',
         shareText: 'DevOps Developer with 8+ years in IT and 4+ in DevOps/SRE. Docker, Kubernetes, Terraform, CI/CD. Google Cloud certified. Available remote.',
         present: 'Present',
+        // GitHub Activity
+        githubActivity: 'GitHub Activity',
+        lastYearContribs: 'Last Year: {n} Contributions',
+        daysMon: 'Mon',
+        daysWed: 'Wed',
+        daysFri: 'Fri',
+        quarterQ1: 'Q1 (Jan–Mar)',
+        quarterQ2: 'Q2 (Apr–Jun)',
+        quarterQ3: 'Q3 (Jul–Sep)',
+        quarterQ4: 'Q4 (Oct–Dec)',
+        less: 'Less',
+        more: 'More',
+        ghRepos: 'Repos',
+        ghStars: 'Stars',
+        ghContributions: 'Contributions',
+        openProjects: 'Open Source Projects',
         ats_dominio: 'Domain',
         ats_stack: 'Core Stack',
         ats_cicd: 'CI/CD',
@@ -1138,7 +1170,7 @@
       }
       const rand = seededRandom(42);
       const levels = ['bg-gray-100 dark:bg-gray-700', 'bg-green-200 dark:bg-green-900', 'bg-green-400 dark:bg-green-700', 'bg-green-500 dark:bg-green-600', 'bg-green-600 dark:bg-green-500'];
-      const quarterLabels = ['Q1 (Jan–Mar)', 'Q2 (Apr–Jun)', 'Q3 (Jul–Sep)', 'Q4 (Oct–Dec)'];
+      const quarterLabels = [t('quarterQ1'), t('quarterQ2'), t('quarterQ3'), t('quarterQ4')];
       const weeksPerQuarter = 13; // ~13 weeks per quarter
 
       // Generate quarterly heatmaps
@@ -1162,28 +1194,30 @@
         `;
       }
 
+      const lastYearText = t('lastYearContribs').replace('{n}', `<strong class="text-gray-900 dark:text-white">${gh.stats.contributions_last_year}</strong>`);
+
       container.innerHTML = `
         <div class="flex justify-between items-center mb-4">
           <h4 class="text-lg font-bold text-gray-900 dark:text-white">
-            <i class="fa-brands fa-github mr-2"></i>GitHub Activity
+            <i class="fa-brands fa-github mr-2"></i>${t('githubActivity')}
           </h4>
-          <span class="text-xs text-gray-500 dark:text-gray-400">Last Year: <strong class="text-gray-900 dark:text-white">${gh.stats.contributions_last_year} Contributions</strong></span>
+          <span class="text-xs text-gray-500 dark:text-gray-400">${lastYearText}</span>
         </div>
 
         <!-- Quarterly Heatmap -->
         <div class="w-full overflow-hidden mb-5">
           <div class="flex gap-2">
             <div class="flex flex-col justify-between text-[10px] text-gray-400 py-4" style="min-width:24px;">
-              <span></span><span>Mon</span><span></span><span>Wed</span><span></span><span>Fri</span><span></span>
+              <span></span><span>${t('daysMon')}</span><span></span><span>${t('daysWed')}</span><span></span><span>${t('daysFri')}</span><span></span>
             </div>
             <div class="flex-grow grid grid-cols-4 gap-3">
               ${quartersHTML}
             </div>
           </div>
           <div class="flex justify-end items-center gap-1 text-[10px] text-gray-500 dark:text-gray-400 mt-2">
-            <span>Less</span>
+            <span>${t('less')}</span>
             ${levels.map(l => `<div class="w-2.5 h-2.5 ${l} rounded-sm"></div>`).join('')}
-            <span>More</span>
+            <span>${t('more')}</span>
           </div>
         </div>
 
@@ -1191,15 +1225,15 @@
         <div class="grid grid-cols-3 gap-2 text-center border-t border-gray-100 dark:border-gray-700 pt-4">
           <div>
             <div class="text-lg font-bold text-gray-900 dark:text-white">${gh.stats.repos}</div>
-            <div class="text-xs text-gray-500 dark:text-gray-400">Repos</div>
+            <div class="text-xs text-gray-500 dark:text-gray-400">${t('ghRepos')}</div>
           </div>
           <div>
             <div class="text-lg font-bold text-gray-900 dark:text-white">${gh.stats.stars}</div>
-            <div class="text-xs text-gray-500 dark:text-gray-400">Stars</div>
+            <div class="text-xs text-gray-500 dark:text-gray-400">${t('ghStars')}</div>
           </div>
           <div>
             <div class="text-lg font-bold text-gray-900 dark:text-white">${gh.stats.contributions_last_year}</div>
-            <div class="text-xs text-gray-500 dark:text-gray-400">Contributions</div>
+            <div class="text-xs text-gray-500 dark:text-gray-400">${t('ghContributions')}</div>
           </div>
         </div>
 
@@ -1208,7 +1242,7 @@
           <div class="flex items-center justify-between mb-3">
             <span class="text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider flex items-center gap-1.5">
               <i class="fa-solid fa-code-branch text-accent-violet"></i>
-              ${currentLang === 'es' ? 'Proyectos Open Source' : 'Open Source Projects'}
+              ${t('openProjects')}
             </span>
             <span class="text-xs text-gray-400 font-mono">${gh.repos_destacados.length} repos</span>
           </div>
