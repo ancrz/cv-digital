@@ -72,7 +72,7 @@
   "experiencia": [
     {
       "empresa": "BBVA Provincial S.A.",
-      "cargo": "Infrastructure & IT Ops Associate",
+      "cargo": "Infrastructure & IT Ops Associate I",
       "ubicacion": "Caracas, Venezuela",
       "periodo": "2026",
       "logros": [
@@ -228,7 +228,7 @@
       },
       "experiencia": [
         {
-          "cargo": "Infrastructure & IT Ops Associate",
+          "cargo": "Infrastructure & IT Ops Associate I",
           "periodo": "2026",
           "logros": [
             "Databases & HA: Migrations, optimization, technical standardization, and unified operational standardization for Oracle (Data Guard, ASM, RAC, Restart) and SQL Server (HA + Always On).",
